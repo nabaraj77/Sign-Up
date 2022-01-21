@@ -1,0 +1,35 @@
+body{
+    margin: 20px 0px;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+form{
+    height: 600px;
+    width: 500px;
+    box-sizing: border-box;
+}
+form p{
+    margin: 20px;
+    box-sizing: border-box;
+    background-color: rgb(239, 244, 253);
+}
+fieldset{
+    border: 3px solid navy;
+    box-shadow: 5px 5px red;
+}
+legend{
+    color: tomato;   
+    font-size: 20px; 
+    font-weight: bold;
+}
+
+
+
+
+
+
+/* Form Validation Error  */
+label.error{
+    color: red;
+    font-size: 0.5rem;
+}

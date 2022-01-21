@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="style.css">
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>   
+
+</head>
+<body>
+    <form id="signUpForm" action="" method="get">
+        <fieldset>
+            <legend>Sign Up </legend>
+            <p>
+                <label for="name"> Name </label><br>
+                <input type="text" id="name" name="name" >
+            </p>
+            <p>
+                <label for="email"> Email </label><br>
+                <input type="email" id="email" name="email" >
+            </p>
+            <p>
+                <label for="phoneNo"> Phone No  </label><br>
+                <input type="phoneNo" id="phoneNo" name="phoneNo" >
+            </p>
+            <p>
+                <label for="gender" id="gender" name = "gender"> Gender </label>
+                <input type="radio" id="male" name="gender" >
+                <label for="male"> Male </label>
+                <input type="radio" id="female" name="gender">
+                <label for="female"> Female </label>     
+            </p>
+            <p>
+                <label for="password"> Password </label><br>
+                <input type="password" id="password" name="password" value="">
+            </p>
+            <p>
+                <label for="rePassword"> Re-Type Password </label><br>
+                <input type="password" id="rePassword" name="rePassword" value="">
+            </p>
+            <p>
+                <label for="age">Age</label>
+                <input type="text" id="age" name="age">
+            </p>
+            <p>
+                <input type="submit" value="Submit">
+            </p>
+            
+            
+            
+
+
+        </fieldset>
+    </form>
+    <script>
+        $(document).ready(function(){
+            $("#signUpForm").validate({
+                rules: {
+                    name: {
+                        required: true,
+                        minlength :2
+                    },
+                    email: {
+                        required: true
+                    },
+                    phoneNo: {
+                        required: true,
+                        number: true,
+                        minlength:10
+                    },
+                    age: {
+                        required: true,
+                        number: true,
+                        min: 18
+                    }
+                },
+                //CUSTOM MESSAGES TO DISPLAY
+                messages:{
+                    name:{
+                        required: "Enter Your Name",
+                        minlength: "Please Enter the Name greater than two characters."
+                    },
+                    email:{
+                        required: "Enter your Email."
+                    },
+                    phoneNo:{
+                        required: "Enter Your Phone no."
+                    },
+                    age: {
+                        required: "Enter Your age.",
+                        number: "Please Enter a numberic Value.",
+                        min: "Enter a value greater than 18."
+                    }
+
+                }
+
+            });
+        });
+    </script>
+</body>
+</html>
